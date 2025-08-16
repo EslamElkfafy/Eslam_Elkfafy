@@ -1,0 +1,15 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --color-primary: #000;
+    --color-secondary: #fff;
+    --color-bg-secondary: #F5F5F5;
+    --color-bg-primary: #fff;
+    --color-bg-button-primary: #FFF544;
+    --color-bg-button-secondary: #000;
+}

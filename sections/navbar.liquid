@@ -1,0 +1,29 @@
+
+<link rel="stylesheet" href="{{ 'navbar.css' | asset_url }}">
+
+<header class="navbar-header">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a href="{{ routes.root_url }}">
+        {% if shop.brand.logo %}
+          <img src="{{ shop.brand.logo | img_url: width:151.444 }}"  alt="{{ shop.brand.name }}"/>
+        {% else %}
+          <span>{{ shop.brand.name }}</span>
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Center message - hidden on mobile -->
+    <div class="navbar-message">Find the ideal gift for your loved ones.</div>
+
+    <!-- CTA Button -->
+    <button class="navbar-button">
+      <span class="button-text-desktop">CHOOSE GIFT</span>
+      <span class="button-text-mobile">GIFT</span>
+      <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+      </svg>
+    </button>
+  </div>
+</header>
