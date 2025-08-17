@@ -1,0 +1,145 @@
+.hero-section {
+  /* Main hero section container */
+}
+
+.hero-img-container {
+  position: relative;
+  height: 30rem;
+}
+
+@media (min-width: 600px) {
+  .hero-img-container {
+    height: 48.75rem;
+  }
+}
+
+.hero-img-frame-desktop,
+.hero-img-frame-mobile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-img-frame-desktop {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .hero-img-frame-desktop {
+    display: block;
+  }
+  .hero-img-frame-mobile {
+    display: none;
+  }
+}
+
+.hero-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text-container-mobile,
+.hero-text-container-desktop {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text-container-desktop h1,
+.hero-text-container-desktop p {
+  display: none;
+}
+
+.hero-text-container-desktop {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 3.75rem;
+  gap: 3.125rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text-container-mobile {
+  text-align: center;
+  padding: 1.25rem;
+  margin: auto;
+  max-width: 30rem;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .hero-text-container-mobile {
+    display: none;
+  }
+  .hero-text-container-desktop h1,
+  .hero-text-container-desktop p {
+    display: block;
+  }
+  .hero-text-container-desktop {
+    width: 30.1875rem;
+    align-items: start;
+    justify-content: start;
+    left: 3.75rem;
+  }
+}
+
+.hero-text-container-mobile h1 {
+  font-size: 3rem;
+}
+
+.hero-text-container-mobile p {
+  font-size: 1rem;
+}
+
+.hero-text-container-desktop h1 {
+  font-size: 4.375rem;
+}
+
+.hero-text-container-desktop p {
+  font-size: 1.25rem;
+}
+
+.hero-text-container-desktop h1,
+.hero-text-container-mobile h1 {
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.hero-text-container-desktop p,
+.hero-text-container-mobile p {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.hero-button {
+  background-color: var(--color-bg-button-secondary);
+  color: var(--color-secondary);
+  padding: 0.89125rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 13.75rem;
+}
+
+.hero-button:hover {
+  background-color: var(--color-bg-button-primary);
+  color: var(--color-primary);
+}
+
+.hero-arrow-icon {
+    width: 1.5rem;
+  /* Arrow icon styles if needed */
+}

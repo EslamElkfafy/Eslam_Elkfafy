@@ -1,9 +1,9 @@
 .navbar-header {
     background-color: var(--color-bg-secondary);
-    padding: 0.625rem .625rem;
+    padding: 0.625rem 3.125rem;
   }
 
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     .navbar-header {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -15,7 +15,7 @@
       padding-left: 3.125rem;
       padding-right: 3.125rem;
     }
-  }
+  } */
 
   .navbar-container {
     display: flex;
@@ -28,7 +28,7 @@
   .navbar-logo {
     font-family: 'Jost', sans-serif;
     color: var(--color-primary);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.025em;
   }
@@ -51,20 +51,19 @@
     font-size: 1.25rem;
   }
 
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     .navbar-logo {
       font-size: 1rem;
     }
-  }
+  } */
 
   .navbar-message {
-    font-family: 'Jost', sans-serif;
     color: var(--color-primary);
     font-size: 1rem;
     display: none;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 600px) {
     .navbar-message {
       display: block;
     }
@@ -73,18 +72,18 @@
   .navbar-button {
     background-color: var(--color-bg-button-primary);
     color: var(--color-primary);
-    padding: 0.5rem 1rem;
     font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.025em;
-    display: flex;
     align-items: center;
-    gap: 0.5rem;
     border: none;
     cursor: pointer;
     transition: background-color 0.2s;
+    display: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    gap: 1rem;
   }
 
   .navbar-button:hover {
@@ -92,21 +91,22 @@
     color: var(--color-secondary);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 600px) {
     .navbar-button {
-      padding: 0.75rem 1.5rem;
+      /* padding: 0.75rem 1.5rem;
       font-size: 0.875rem;
-      gap: 1rem;
+      gap: 1rem; */
+      display: flex;
     }
   }
 
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     .navbar-button {
       padding: 0.75rem 2rem;
       font-size: 1rem;
       gap: 1rem;
     }
-  }
+  } */
 
   .button-text-desktop {
     display: none;
@@ -129,11 +129,11 @@
   }
 
   .arrow-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+      height: 1.5rem;
   }
 
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     .arrow-icon {
       width: 1.25rem;
       height: 1.25rem;
@@ -145,4 +145,4 @@
       width: 1.5rem;
       height: 1.5rem;
     }
-  }
+  } */

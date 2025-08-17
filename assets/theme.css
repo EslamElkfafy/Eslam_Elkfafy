@@ -21,3 +21,19 @@ h1, h2, h3, h4, h5, h6,p{
     --color-bg-button-primary: #FFF544;
     --color-bg-button-secondary: #000;
 }
+@media (max-width:1300px) {
+    :root{
+        font-size: 14px;
+    }
+
+}
+@media (max-width:900px) {
+    :root{
+        font-size: 12px;
+    }
+}
+@media (max-width:500px) {
+    :root{
+        font-size: 9px;
+    }
+}
