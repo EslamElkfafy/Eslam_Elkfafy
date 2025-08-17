@@ -1,0 +1,35 @@
+{{ 'product.css' | asset_url | stylesheet_tag }}
+
+<section class="product-section">
+  <div class="product-container">
+    <div class="product-title-container">
+      <h2 class="product-title">Tisso vison in the wild</h2>
+    </div>
+    
+    <div class="product-gallery">
+      {% for product in collections.all.products limit: 18 %}
+        <div class="product-item">
+          <img
+            src="{{ product.featured_image | img_url: '400x' }}"
+            alt="{{ product.title }}"
+            class="product-image"
+            width="433"
+            height="444"
+            loading="lazy"
+          >
+          <button 
+            class="add-button" 
+            aria-label="Add {{ product.title }} to cart" 
+            onclick="openProductModal('{{ product.handle | escape }}')"
+          >
+          </button>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Product Modal -->
+{% render 'modal' %}
+
+
