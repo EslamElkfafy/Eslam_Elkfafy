@@ -1,18 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero": {
-            "type": "hero"
-        },
-        "tagline": {
-            "type": "tagline",
-        },
-        "product": {
-            "type": "product"
-        }
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "hero_title": "The Gift",
+        "hero_description": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
+        "hero_button_text": "Shop Now"
+      }
     },
-    "order": [
-        "hero",
-        "tagline",
-        "product"
-    ]
+    "tagline": {
+      "type": "tagline",
+      "settings": {
+        "tagline": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+      }
+    },
+    "product": {
+      "type": "product",
+      "settings": {
+        "title": "Featured Products"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "tagline",
+    "product"
+  ]
 }
