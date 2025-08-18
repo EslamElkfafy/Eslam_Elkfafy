@@ -15,17 +15,12 @@
 
     <!-- Center message - hidden on mobile -->
     <div class="navbar-message">
-      {% if settings.navbar_message %}
-        {{ settings.navbar_message | escape }}
-      {% else %}
-        Find the ideal gift for your loved ones.
-      {% endif %}
+        {{ settings.navbar_message | escape }}=
     </div>
 
     <!-- CTA Button -->
     <button class="navbar-button">
-      <span class="button-text-desktop">CHOOSE GIFT</span>
-      <span class="button-text-mobile">GIFT</span>
+      <span class="button-text-desktop">{{ settings.cta_button_text }}</span>
       <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
       </svg>
@@ -40,17 +35,19 @@
 </header>
 {%  schema  %} 
 {
-  "name": "settings",
+  "name": "Nav Bar",
   "settings": [
     {
       "type": "text",
       "id": "navbar_message",
-      "label": "Navbar message"
+      "label": "Navbar message",
+      "default": "Find the ideal gift for your loved ones."
     },
     {
       "type": "text",
       "id": "cta_button_text",
-      "label": "CTA button text"
+      "label": "CTA button text",
+      "default": "CHOOSE GIFT"
     },
     {
       "type": "text",
