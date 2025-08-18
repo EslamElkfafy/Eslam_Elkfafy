@@ -14,19 +14,8 @@
     </div>
   {% endcomment %}
   <div class="hero-text-container-mobile">
-    {% if settings.hero_title %}
-      <h1>{{ settings.hero_title }}</h1>
-    {% else %}
-      <h1>The Gift Guide</h1>
-    {% endif %}
-    {% if settings.hero_description %}
-      <p>{{ settings.hero_description }}</p>
-    {% else %}
-      <p>
-        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts
-        to delight your loved ones this holiday season.
-      </p>
-    {% endif %}
+    <h1>{{ section.settings.hero_title }}</h1>
+    <p>{{ section.settings.hero_description }}</p>
   </div>
   <div class="hero-img-container">
     <img
@@ -45,20 +34,9 @@
     >
     <div class="hero-text-container-desktop">
       <h1>{{ section.settings.hero_title }}</h1>
-      {% if settings.hero_description %}
-        <p>{{ settings.hero_description }}</p>
-      {% else %}
-        <p>
-          Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts
-          to delight your loved ones this holiday season.
-        </p>
-      {% endif %}
+      <p>{{ section.settings.hero_description }}</p>
       <button class="hero-button">
-        {% if settings.hero_button_text %}
-          <span>{{ settings.hero_button_text }}</span>
-        {% else %}
-          <span>Shop Now</span>
-        {% endif %}
+        <span>{{ section.settings.hero_button_text }}</span>
 
         <svg
           class="hero-arrow-icon"
