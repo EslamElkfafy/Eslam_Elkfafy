@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="{{ 'navbar.css' | asset_url }}">
 
 <header class="navbar-header">
@@ -7,7 +6,7 @@
     <div class="navbar-logo">
       <a href="{{ routes.root_url }}">
         {% if shop.brand.logo %}
-          <img src="{{ shop.brand.logo | img_url: width:151.444 }}"  alt="{{ shop.brand.name }}"/>
+          <img src="{{ shop.brand.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}">
         {% else %}
           <span>{{ shop.brand.name }}</span>
         {% endif %}
@@ -15,7 +14,13 @@
     </div>
 
     <!-- Center message - hidden on mobile -->
-    <div class="navbar-message">Find the ideal gift for your loved ones.</div>
+    <div class="navbar-message">
+      {% if settings.navbar_message %}
+        {{ settings.navbar_message | escape }}
+      {% else %}
+        Find the ideal gift for your loved ones.
+      {% endif %}
+    </div>
 
     <!-- CTA Button -->
     <button class="navbar-button">
@@ -26,8 +31,39 @@
       </svg>
     </button>
     {% comment %} buger icon {% endcomment %}
-      {% comment %} <div class="navbar-icon">
+    {% comment %}
+      <div class="navbar-icon">
         <img src="{{ 'burger-icon.svg' | asset_url }}" width="18" height="10" alt="buger icon">
-      </div> {% endcomment %}
+      </div>
+    {% endcomment %}
   </div>
 </header>
+{%  schema  %} 
+{
+  "name": "settings",
+  "settings": [
+    {
+      "type": "text",
+      "id": "navbar_message",
+      "label": "Navbar message"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA button text"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_mobile",
+      "label": "CTA button text (mobile)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nav Bar",
+      "category": "General"
+    }
+  ]
+}
+
+ {% endschema %}
