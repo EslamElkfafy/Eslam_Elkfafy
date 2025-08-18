@@ -5,8 +5,8 @@
     <!-- Logo -->
     <div class="navbar-logo">
       <a href="{{ routes.root_url }}">
-        {% if settings.logo %}
-          <img src="{{ settings.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}">
+        {% if section.settings.logo %}
+          <img src="{{ section.settings.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}">
         {% else %}
           {% if shop.brand.logo %}
             <img src="{{ shop.brand.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}">
@@ -19,21 +19,13 @@
 
 <!-- Center message - hidden on mobile -->
     <div class="navbar-message-desktop">
-      {% if settings.navbar_message %}
-        {{ settings.navbar_message | escape }}
-      {% else %}
-        Find the ideal gift for your loved ones.
-      {% endif %}
+      {{ section.settings.navbar_message | escape }}
     </div>
 
     <!-- CTA Button -->
     <button class="navbar-button-desktop">
       <span class="navbar-button-text">
-        {% if settings.cta_button_text %}
-          <span class="navbar-button-text">{{ settings.cta_button_text }}</span>
-        {% else %}
-          <span class="navbar-button-text">CHOOSE GIFT</span>
-        {% endif -%}
+        <span class="navbar-button-text">{{ section.settings.cta_button_text }}</span>
       </span>
       <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -46,21 +38,13 @@
     </div>
     <div class="mobile-nav" id="mobile-nav">
       <div class="navbar-message-mobile">
-        {% if settings.navbar_message %}
-          {{ settings.navbar_message | escape }}
-        {% else %}
-          Find the ideal gift for your loved ones.
-        {% endif %}
+        {{ section.settings.navbar_message | escape }}
       </div>
   
       <!-- CTA Button -->
       <button class="navbar-button-mobile">
         <span class="navbar-button-text">
-          {% if settings.cta_button_text %}
-            <span class="navbar-button-text">{{ settings.cta_button_text }}</span>
-          {% else %}
-            <span class="navbar-button-text">CHOOSE GIFT</span>
-          {% endif -%}
+          <span class="navbar-button-text">{{ section.settings.cta_button_text }}</span>
         </span>
         <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
