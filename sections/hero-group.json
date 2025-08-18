@@ -1,0 +1,16 @@
+{
+    "type": "hero",
+    "name": "Hero Group",
+    "sections": {
+        "hero": {
+            "type": "hero"
+        },
+        "tagline": {
+            "type": "tagline"
+        }
+    },
+    "order": [
+        "hero",
+        "tagline"
+    ]
+}

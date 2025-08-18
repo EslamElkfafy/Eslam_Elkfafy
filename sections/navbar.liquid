@@ -6,10 +6,10 @@
     <div class="navbar-logo">
       <a href="{{ routes.root_url }}">
         {% if settings.logo %}
-          <img src="{{ settings.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}"/>
+          <img src="{{ settings.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}">
         {% else %}
           {% if shop.brand.logo %}
-            <img src="{{ shop.brand.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}"/>
+            <img src="{{ shop.brand.logo | img_url: width:151.444 }}" alt="{{ shop.brand.name }}">
           {% else %}
             <span>{{ shop.brand.name }}</span>
           {% endif %}
@@ -17,8 +17,8 @@
       </a>
     </div>
 
-    <!-- Center message - hidden on mobile -->
-    <div class="navbar-message">
+<!-- Center message - hidden on mobile -->
+    <div class="navbar-message-desktop">
       {% if settings.navbar_message %}
         {{ settings.navbar_message | escape }}
       {% else %}
@@ -27,31 +27,66 @@
     </div>
 
     <!-- CTA Button -->
-    <button class="navbar-button">
-      <span class="button-text-desktop">
+    <button class="navbar-button-desktop">
+      <span class="navbar-button-text">
         {% if settings.cta_button_text %}
-          <span class="button-text-desktop">{{ settings.cta_button_text }}</span>
+          <span class="navbar-button-text">{{ settings.cta_button_text }}</span>
         {% else %}
-          <span class="button-text-desktop">CHOOSE GIFT</span>
+          <span class="navbar-button-text">CHOOSE GIFT</span>
         {% endif -%}
       </span>
       <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
       </svg>
     </button>
+    
     {% comment %} buger icon {% endcomment %}
-    {% comment %}
-      <div class="navbar-icon">
-        <img src="{{ 'burger-icon.svg' | asset_url }}" width="18" height="10" alt="buger icon">
+    <div class="navbar-icon" id="burger-btn">
+      <img id="burger-icon" src="{{ 'burger-icon.svg' | asset_url }}" width="18" height="10" alt="buger icon">
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <div class="navbar-message-mobile">
+        {% if settings.navbar_message %}
+          {{ settings.navbar_message | escape }}
+        {% else %}
+          Find the ideal gift for your loved ones.
+        {% endif %}
       </div>
-    {% endcomment %}
+  
+      <!-- CTA Button -->
+      <button class="navbar-button-mobile">
+        <span class="navbar-button-text">
+          {% if settings.cta_button_text %}
+            <span class="navbar-button-text">{{ settings.cta_button_text }}</span>
+          {% else %}
+            <span class="navbar-button-text">CHOOSE GIFT</span>
+          {% endif -%}
+        </span>
+        <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const burgerBtn = document.getElementById('burger-btn');
+    const burgerIcon = document.getElementById('burger-icon');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    burgerBtn.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('active');
+      // Swap icons
+      burgerIcon.src = isOpen ? "{{ 'close-burger-icon.svg' | asset_url }}" : "{{ 'burger-icon.svg' | asset_url }}";
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Nav Bar",
   "settings": [
-        {
+    {
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
