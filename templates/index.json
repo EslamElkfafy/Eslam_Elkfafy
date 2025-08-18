@@ -1,14 +1,18 @@
 {
     "sections": {
         "hero": {
-            "type": "hero-group"
+            "type": "hero"
+        },
+        "tagline": {
+            "type": "tagline",
         },
         "product": {
             "type": "product"
         }
     },
     "order": [
-        "hero-group",
+        "hero",
+        "tagline",
         "product"
     ]
 }

@@ -1,5 +1,9 @@
 <section>
-  <p>{{  }}</p>
+  {% if section.settings.tagline %}
+    <p>{{ section.settings.tagline | escape }}</p>
+  {% else %}
+    <p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>
+  {% endif %}
 </section>
 {% schema %}
 {
@@ -10,12 +14,12 @@
       "id": "tagline",
       "label": "Tagline",
       "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
-    },
+    }
+  ],
+  "presets": [
     {
-        "presets": {
-            "name": "Tagline",
-            "category": "Hero"
-        }
+      "name": "Tagline",
+      "category": "General"
     }
   ]
 }

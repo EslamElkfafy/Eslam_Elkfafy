@@ -14,23 +14,56 @@
     </div>
   {% endcomment %}
   <div class="hero-text-container-mobile">
-    <h1>The Gift Guide</h1>
-    <p>
-      Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to
-      delight your loved ones this holiday season.
-    </p>
-  </div>
-  <div class="hero-img-container">
-    <img class="hero-img-frame-mobile" src="{{ 'bg-hero-m.svg' | asset_url }}" alt="Hero Image" width="600" height="480">
-    <img class="hero-img-frame-desktop" src="{{ 'bg-hero-d.svg' | asset_url }}" alt="Hero Image" width="1200" height="780">
-    <div class="hero-text-container-desktop">
+    {% if settings.hero_title %}
+      <h1>{{ settings.hero_title }}</h1>
+    {% else %}
       <h1>The Gift Guide</h1>
+    {% endif %}
+    {% if settings.hero_description %}
+      <p>{{ settings.hero_description }}</p>
+    {% else %}
       <p>
         Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts
         to delight your loved ones this holiday season.
       </p>
+    {% endif %}
+  </div>
+  <div class="hero-img-container">
+    <img
+      class="hero-img-frame-mobile"
+      src="{{ 'bg-hero-m.svg' | asset_url }}"
+      alt="Hero Image"
+      width="600"
+      height="480"
+    >
+    <img
+      class="hero-img-frame-desktop"
+      src="{{ 'bg-hero-d.svg' | asset_url }}"
+      alt="Hero Image"
+      width="1200"
+      height="780"
+    >
+    <div class="hero-text-container-desktop">
+      {% if settings.hero_title %}
+        <h1>{{ settings.hero_title }}</h1>
+      {% else %}
+        <h1>The Gift Guide</h1>
+      {% endif %}
+      {% if settings.hero_description %}
+        <p>{{ settings.hero_description }}</p>
+      {% else %}
+        <p>
+          Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts
+          to delight your loved ones this holiday season.
+        </p>
+      {% endif %}
       <button class="hero-button">
-        <span>Shop Now</span>
+        {% if settings.hero_button_text %}
+          <span>{{ settings.hero_button_text }}</span>
+        {% else %}
+          <span>Shop Now</span>
+        {% endif %}
+
         <svg
           class="hero-arrow-icon"
           fill="none"
@@ -44,3 +77,34 @@
     </div>
   </div>
 </section>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "text",
+      "id": "hero_description",
+      "label": "Hero Description",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Hero Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "category": "General"
+    }
+  ]
+}
+{% endschema %}
