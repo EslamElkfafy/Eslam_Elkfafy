@@ -3,35 +3,15 @@
 <section class="product-section">
   <div class="product-container">
     <div class="product-title-container">
-      <h2 class="product-title">Tisso vison in the wild</h2>
+      <h2 class="product-title">{{ section.settings.title }}</h2>
     </div>
 
-      <div class="product-gallery">
-        {% if section.blocks.size > 0 %}
-          {%- comment -%} Show products chosen in the customizer {%- endcomment -%}
-          {% for block in section.blocks %}
-            {% assign product = all_products[block.settings.product] %}
-            {% if product %}
-              <div class="product-item">
-                <img
-                  src="{{ product.featured_image | img_url: '400x' }}"
-                  alt="{{ product.title }}"
-                  class="product-image"
-                  width="433"
-                  height="444"
-                  loading="lazy"
-                >
-                <button
-                  class="add-button"
-                  aria-label="Add {{ product.title }} to cart"
-                  onclick="openProductModal('{{ product.handle | escape }}')"
-                ></button>
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          {%- comment -%} Fallback: first 6 products from all collections {%- endcomment -%}
-          {% for product in collections.all.products limit: 6 %}
+    <div class="product-gallery">
+      {% if section.blocks.size > 0 %}
+        {%- comment -%} Show products chosen in the customizer {%- endcomment -%}
+        {% for block in section.blocks %}
+          {% assign product = all_products[block.settings.product] %}
+          {% if product %}
             <div class="product-item">
               <img
                 src="{{ product.featured_image | img_url: '400x' }}"
@@ -44,12 +24,36 @@
               <button
                 class="add-button"
                 aria-label="Add {{ product.title }} to cart"
+                style="
+                  top: {{ block.settings.btn_top }}rem;
+                  right: {{ block.settings.btn_right }}rem;
+                "
                 onclick="openProductModal('{{ product.handle | escape }}')"
               ></button>
             </div>
-          {% endfor %}
-        {% endif %}
-      </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {%- comment -%} Fallback: first 6 products from all collections {%- endcomment -%}
+        {% for product in collections.all.products limit: 6 %}
+          <div class="product-item">
+            <img
+              src="{{ product.featured_image | img_url: '400x' }}"
+              alt="{{ product.title }}"
+              class="product-image"
+              width="433"
+              height="444"
+              loading="lazy"
+            >
+            <button
+              class="add-button"
+              aria-label="Add {{ product.title }} to cart"
+              onclick="openProductModal('{{ product.handle | escape }}')"
+            ></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
 </section>
 
@@ -57,43 +61,61 @@
 {% render 'modal' %}
 
 {% schema %}
-  {
-    "name": "Product Grid",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Section title",
-        "default": "Featured Products"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "product",
-        "name": "Product",
-        "settings": [
-          {
-            "type": "product",
-            "id": "product",
-            "label": "Select product"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 6,
-    "presets": [
-      {
-        "name": "Product Grid",
-        "category": "Products",
-        "blocks": [
-          { "type": "product" },
-          { "type": "product" },
-          { "type": "product" },
-          { "type": "product" },
-          { "type": "product" },
-          { "type": "product" }
-        ]
-      }
-    ]
-  }
-  {% endschema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Tisso vison in the wild"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select product"
+        },
+        {
+          "type": "range",
+          "id": "btn_top",
+          "label": "Button top position (rem)",
+          "min": 0,
+          "max": 27,
+          "step": 0.5,
+          "default": 0.5
+        },
+        {
+          "type": "range",
+          "id": "btn_right",
+          "label": "Button right position (rem)",
+          "min": 0,
+          "max": 27,
+          "step": 0.5,
+          "default": 0.5
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Product Grid",
+      "category": "Products",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}
