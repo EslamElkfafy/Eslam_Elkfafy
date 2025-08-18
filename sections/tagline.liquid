@@ -1,4 +1,6 @@
-<section>
+<link rel="stylesheet" href="{{ 'tagline.css' | asset_url }}">
+
+<section class="tagline-section">
   {% if section.settings.tagline %}
     <p>{{ section.settings.tagline | escape }}</p>
   {% else %}
