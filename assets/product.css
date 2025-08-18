@@ -70,7 +70,6 @@
   
   .product-item {
     position: relative;
-    cursor: pointer;
   }
   
   /* .product-item:hover .add-button {
