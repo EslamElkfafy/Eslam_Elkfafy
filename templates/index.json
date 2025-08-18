@@ -7,13 +7,12 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
-        "hero_title": "The Gift Guide",
+        "hero_title": "The Gi",
         "hero_description": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
         "hero_button_text": "Shop Now"
       }
