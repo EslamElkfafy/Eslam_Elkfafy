@@ -1,7 +1,9 @@
+/* Hero Section Styles */
 .hero-section {
   /* Main hero section container */
 }
 
+/* Hero Image Container Styles */
 .hero-img-container {
   position: relative;
   height: 30rem;
@@ -13,6 +15,7 @@
   }
 }
 
+/* Hero Image Frame Styles */
 .hero-img-frame-desktop,
 .hero-img-frame-mobile {
   width: 100%;
@@ -40,6 +43,7 @@
   object-fit: cover;
 }
 
+/* Hero Text Container Styles */
 .hero-text-container-mobile,
 .hero-text-container-desktop {
   display: flex;
@@ -86,6 +90,7 @@
   }
 }
 
+/* Hero Text Styles */
 .hero-text-container-mobile h1 {
   font-size: 3rem;
 }
@@ -116,6 +121,7 @@
   line-height: 1.5;
 }
 
+/* Hero Button Styles */
 .hero-button {
   background-color: var(--color-bg-button-secondary);
   color: var(--color-secondary);
@@ -139,7 +145,8 @@
   color: var(--color-primary);
 }
 
+/* Hero Arrow Icon Styles */
 .hero-arrow-icon {
-    width: 1.5rem;
+  width: 1.5rem;
   /* Arrow icon styles if needed */
 }

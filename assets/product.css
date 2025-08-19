@@ -1,3 +1,4 @@
+/* Product Section Styles */
 .product-section {
   padding: 3rem 1.15625rem;
 }
@@ -13,11 +14,13 @@
     padding: 6rem 3rem;
   }
 }
+
 .product-container {
   margin: 0 auto;
   max-width: 83.6875rem;
 }
 
+/* Product Title Styles */
 .product-title-container {
   margin-bottom: 1.5rem;
 }
@@ -49,6 +52,7 @@
   }
 }
 
+/* Product Gallery Styles */
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -61,20 +65,10 @@
   }
 }
 
-/* @media (min-width: 1024px) {
-    .product-gallery {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-  } */
-
+/* Product Item Styles */
 .product-item {
   position: relative;
 }
-
-/* .product-item:hover .add-button {
-    opacity: 1;
-  } */
 
 .product-image {
   width: 100%;
@@ -82,18 +76,7 @@
   object-fit: cover;
 }
 
-/* @media (min-width: 640px) {
-    .product-image {
-      height: 350px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .product-image {
-      height: 444px;
-    }
-  } */
-
+/* Add Button Styles */
 .add-button {
   position: absolute;
   top: 0.75rem;
@@ -110,36 +93,27 @@
   border: none;
   cursor: pointer;
 }
-/* @media (min-width: 1100px) {
-  .add-button {
-    top: var(--btn-top);
-    right: calc(var(--btn-right) - 3rem);
-  }
-} */
+
+/* Responsive positioning for add button */
 @media (min-width: 1200px) {
   .add-button {
     top: var(--btn-top);
     right: calc(var(--btn-right) - .75rem);
   }
 }
+
 @media (min-width: 1400px) {
   .add-button {
     right: calc(var(--btn-right));
   }
 }
+
 @media (min-width: 640px) {
   .add-button {
     width: 1.5rem;
     height: 1.5rem;
   }
 }
-
-/* @media (min-width: 1024px) {
-    .add-button {
-      top: 1.5rem;
-      right: 1.5rem;
-    }
-  } */
 
 .add-button::before {
   content: "+";

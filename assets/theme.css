@@ -1,39 +1,50 @@
+/* Theme Styles */
+
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Reset default browser styles */
 *, *::before, *::after {
   box-sizing: border-box;
 }
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Jost', sans-serif;
-    background-color: var(--color-bg-primary);
-}
-h1, h2, h3, h4, h5, h6,p{
-    margin: 0;
-    padding: 0;
-}
-:root{
-    --color-primary: #000;
-    --color-secondary: #fff;
-    --color-bg-secondary: #F5F5F5;
-    --color-bg-primary: #fff;
-    --color-bg-button-primary: #FFF544;
-    --color-bg-button-secondary: #000;
-}
-@media (max-width:1350px) {
-    :root{
-        font-size: 14px;
-    }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Jost', sans-serif;
+  background-color: var(--color-bg-primary);
 }
-@media (max-width:900px) {
-    :root{
-        font-size: 12px;
-    }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
 }
-@media (max-width:500px) {
-    :root{
-        font-size: 9px;
-    }
+
+/* CSS Custom Properties (Variables) */
+:root {
+  --color-primary: #000;
+  --color-secondary: #fff;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-primary: #fff;
+  --color-bg-button-primary: #FFF544;
+  --color-bg-button-secondary: #000;
+}
+
+/* Responsive font sizes */
+@media (max-width: 1350px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    font-size: 9px;
+  }
 }
