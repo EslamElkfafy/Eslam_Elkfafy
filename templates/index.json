@@ -30,8 +30,8 @@
           "type": "product",
           "settings": {
             "product": "black-leather-bag",
-            "btn_top": 21.5,
-            "btn_right": 1
+            "btn_top": 15,
+            "btn_right": 9.5
           }
         },
         "product_ifjj9U": {
@@ -39,7 +39,7 @@
           "settings": {
             "product": "blue-silk-tuxedo",
             "btn_top": 14,
-            "btn_right": 25
+            "btn_right": 4
           }
         },
         "product_wMgbfj": {
@@ -66,7 +66,7 @@
             "btn_right": 12
           }
         },
-        "product_feKKAt": {
+        "product_cMDYWY": {
           "type": "product",
           "settings": {
             "product": "dark-denim-top",
@@ -81,7 +81,7 @@
         "product_wMgbfj",
         "product_xdixzL",
         "product_WYqPFD",
-        "product_feKKAt"
+        "product_cMDYWY"
       ],
       "settings": {
         "title": "Tisso vison in the wild"
