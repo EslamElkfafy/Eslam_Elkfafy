@@ -25,8 +25,8 @@
                 class="add-button"
                 aria-label="Add {{ product.title }} to cart"
                 style="
-                  top: {{ block.settings.btn_top }}rem;
-                  right: {{ block.settings.btn_right }}rem;
+                  --btn-top: {{ block.settings.btn_top }}rem;
+                  --btn-right: {{ block.settings.btn_right }}rem;
                 "
                 onclick="openProductModal('{{ product.handle | escape }}')"
               ></button>
