@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6,p{
     --color-bg-button-primary: #FFF544;
     --color-bg-button-secondary: #000;
 }
-@media (max-width:1300px) {
+@media (max-width:1350px) {
     :root{
         font-size: 14px;
     }

@@ -116,10 +116,10 @@
     right: calc(var(--btn-right) - 3rem);
   }
 } */
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .add-button {
     top: var(--btn-top);
-    right: calc(var(--btn-right) - 2rem);
+    right: calc(var(--btn-right) - .75rem);
   }
 }
 @media (min-width: 1400px) {
